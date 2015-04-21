@@ -79,7 +79,8 @@ function handle_skin() {
 }
 
 function handle_shell() {
-    find shell -type f -mindepth 1 ! -iname ".*"
+    find shell -type d -maxdepth 1 -path "*shell/*"
+    find shell -type f -maxdepth 1
 }
 
 function handle_var() {
