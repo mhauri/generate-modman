@@ -20,3 +20,7 @@ Make the file executable
     
     sudo chmod 755 /usr/local/bin/generate-modman
 
+License
+-------
+
+generate-modman is licensed under the MIT License - see the LICENSE file for details
