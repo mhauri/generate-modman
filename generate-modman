@@ -10,12 +10,13 @@ function list_directories() {
 }
 
 function list_not_excluded_files() {
-    find $dir -type f -mindepth $1 -maxdepth $2   ! -path "*app/code*" ! -path "*app/etc*" | awk '{ print $0 "            " $0 }'
+    find $dir -type f -mindepth $1 -maxdepth $2 ! -iname ".*" ! -path "*app/code*" ! -path "*app/etc*" | awk '{ print $0 "            " $0 }'
 }
 
 function list_all_files() {
-    find $dir -type f -mindepth $1 -maxdepth $2  | awk '{ print $0 "            " $0 }'
+    find $dir -type f -mindepth $1 -maxdepth $2 ! -iname ".*"  | awk '{ print $0 "            " $0 }'
 }
+
 
 for dir in "${directories[@]}"; do
   if [ -d "$dir" ]; then
