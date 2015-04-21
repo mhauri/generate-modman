@@ -20,6 +20,16 @@ Make the file executable
     
     sudo chmod 755 /usr/local/bin/generate-modman
 
+Usage
+-----
+
+    generate-modman [options]
+
+
+Options
+-------
+    --include-others    Include non default magento directories
+
 License
 -------
 
