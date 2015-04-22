@@ -40,52 +40,57 @@ function _print_help() {
 
 function handle_app_code() {
     # link only directories
-    find app/code -type d -mindepth 3 -maxdepth 3 -path "*app/code/local/*" -o -path "*app/code/community/*"
+    find app/code -mindepth 3 -maxdepth 3 -path "*app/code/local/*" -o -path "*app/code/community/*" -type d
 }
 
 function handle_app_etc() {
     # link all files
-    find app/etc -type f ! -iname ".*"
+    _default_file_handler 'app/etc'
 }
 
 function handle_app_locale() {
-    find app/locale -type f ! -iname ".*"
+    _default_file_handler 'app/locale'
 }
 
 function handle_app_design() {
     # link all directories who aren't default
-    find app/design -type d -mindepth 2 -maxdepth 2 \( ! -path "*frontend/rwd*" ! -path "*frontend/default*" ! -path "*frontend/base*" ! -path "*adminhtml/default*" ! -path "*adminhtml/base*" ! -path "*install/default*" \)
+    find app/design -mindepth 2 -maxdepth 2 \( ! -path "*frontend/rwd*" ! -path "*frontend/default*" ! -path "*frontend/base*" ! -path "*adminhtml/default*" ! -path "*adminhtml/base*" ! -path "*install/default*" \) -type d
     # link files in default directories
-    find app/design -type f ! -iname ".*" \( -path  "*frontend/rwd*" -o -path "*frontend/default*" -o -path "*frontend/base*" -o -path "*adminhtml/default*" -o -path "*adminhtml/base*" -o -path "*install/default*" \)
+    find app/design ! -iname ".*" \( -path  "*frontend/rwd*" -o -path "*frontend/default*" -o -path "*frontend/base*" -o -path "*adminhtml/default*" -o -path "*adminhtml/base*" -o -path "*install/default*" \) -type f
 }
 
 function handle_js() {
-    find js -type f -mindepth 1 ! -iname ".*"
+    _default_file_handler js
 }
 
 function handle_lib() {
-    find lib -type f -mindepth 1 ! -iname ".*"
+    _default_file_handler lib
 }
 
 function handle_media() {
-    find media -type f -mindepth 1 ! -iname ".*"
+    _default_file_handler media
 }
 
 function handle_skin() {
     # link all directories who aren't default
-    find skin -type d -mindepth 2 -maxdepth 2 \( ! -path "*frontend/rwd*" ! -path "*frontend/default*" ! -path "*frontend/base*" ! -path "*adminhtml/default*" ! -path "*adminhtml/base*" ! -path "*install/default*" \)
+    find skin -mindepth 2 -maxdepth 2 \( ! -path "*frontend/rwd*" ! -path "*frontend/default*" ! -path "*frontend/base*" ! -path "*adminhtml/default*" ! -path "*adminhtml/base*" ! -path "*install/default*" \) -type d
     # link files in default directories
-    find skin -type f ! -iname ".*" \( -path  "*frontend/rwd*" -o -path "*frontend/default*" -o -path "*frontend/base*" -o -path "*adminhtml/default*" -o -path "*adminhtml/base*" -o -path "*install/default*" \)
+    find skin ! -iname ".*" \( -path  "*frontend/rwd*" -o -path "*frontend/default*" -o -path "*frontend/base*" -o -path "*adminhtml/default*" -o -path "*adminhtml/base*" -o -path "*install/default*" \) -type f
 }
 
 function handle_shell() {
-    find shell -type d -maxdepth 1 -path "*shell/*"
-    find shell -type f -maxdepth 1
+    find shell -maxdepth 1 -path "*shell/*" -type d
+    _default_file_handler shell
 }
 
 function handle_var() {
-    find var -type d -mindepth 1 -maxdepth 1
+    find var -mindepth 1 -maxdepth 1 -type d
 }
+
+function _default_file_handler() {
+    find $1 -mindepth 1 ! -iname ".*" -type f
+}
+
 
 if [ ! -z "$1" ]; then
    for argument in $@; do
