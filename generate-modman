@@ -54,9 +54,9 @@ function handle_app_locale() {
 
 function handle_app_design() {
     # link all directories who aren't default
-    find app/design -type d -mindepth 2 -maxdepth 2 \( ! -path "*frontend/rwd*" ! -path "*frontend/default*" ! -path "*frontend/base*" ! -path "*adminhtml/default*" ! -path "*install/default*" \)
+    find app/design -type d -mindepth 2 -maxdepth 2 \( ! -path "*frontend/rwd*" ! -path "*frontend/default*" ! -path "*frontend/base*" ! -path "*adminhtml/default*" ! -path "*adminhtml/base*" ! -path "*install/default*" \)
     # link files in default directories
-    find app/design -type f ! -iname ".*" \( -path  "*frontend/rwd*" -o -path "*frontend/default*" -o -path "*frontend/base*" -o -path "*adminhtml/default*" -o -path "*install/default*" \)
+    find app/design -type f ! -iname ".*" \( -path  "*frontend/rwd*" -o -path "*frontend/default*" -o -path "*frontend/base*" -o -path "*adminhtml/default*" -o -path "*adminhtml/base*" -o -path "*install/default*" \)
 }
 
 function handle_js() {
