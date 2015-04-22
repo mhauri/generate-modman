@@ -80,7 +80,7 @@ function handle_skin() {
 
 function handle_shell() {
     find shell -maxdepth 1 -path "*shell/*" -type d
-    _default_file_handler shell
+    find shell -maxdepth 1 -type f
 }
 
 function handle_var() {
