@@ -29,6 +29,7 @@ Usage
 Options
 -------
     --include-others    Include non default magento directories
+    --subdirectory=DIRNAME       If files are in a subdirectory of the module (e.g. src for src/app/code/community))
 
 License
 -------
