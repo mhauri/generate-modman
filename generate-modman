@@ -133,5 +133,5 @@ done
 # handle all other directories
 if [ $include_others -eq 1 ]; then
     echo "# others" >> $modman
-    find * -type d -maxdepth 0 \( ! -path "*app*" ! -path "*js*" ! -path "*lib*" ! -path "*media*" ! -path "*skin*" ! -path "*shell*" ! -path "*var*" \) | awk -v prefix="$prefix" '{ print prefix$$0 "            " $0 }' >> $modman
+    find * -type d -maxdepth 0 \( ! -path "*app*" ! -path "*js*" ! -path "*lib*" ! -path "*media*" ! -path "*skin*" ! -path "*shell*" ! -path "*var*" \) | awk -v prefix="$prefix" '{ print prefix$0 "            " $0 }' >> $modman
 fi
