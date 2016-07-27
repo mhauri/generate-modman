@@ -1,5 +1,6 @@
 generate-modman
 ===============
+Automatically generate modman file for Magento 1 modules on the fly.
 
 Requirements
 ------------
@@ -19,6 +20,12 @@ Move file to /usr/local/bin
 Make the file executable
     
     sudo chmod 755 /usr/local/bin/generate-modman
+    
+
+Composer Install
+--------
+Alternative to manual download: Install via composer.
+
 
 Usage
 -----

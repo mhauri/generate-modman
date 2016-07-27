@@ -1,0 +1,11 @@
+{
+    "name":"generate-modman/generate-modman",
+    "description":"Automatically generate modman file for Magento 1 modules on the fly",
+    "minimum-stability":"dev",
+    "license":"MIT",
+    "require":{
+    },
+    "bin": [
+        "generate-modman"
+    ]
+}
