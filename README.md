@@ -37,6 +37,7 @@ Options
 -------
     --include-others    Include non default magento directories
     --include-others-files    Include non default magento directories as files
+    --include_others_files_mindepth=MINDEPTH${NONE}       mindepth for include other files. (default: 1 to skip root)
     --include-app-code-core      Include app/code/core files (e.g. for official patches)
     --subdirectory=DIRNAME       If files are in a subdirectory of the module (e.g. src for src/app/code/community))
 
