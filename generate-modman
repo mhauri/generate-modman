@@ -31,7 +31,7 @@ function _handle_input() {
             include_others_files=1
             argument_found=1
         ;;
-        --include_others_files_mindepth=*)
+        --include-others-files-mindepth=*)
             include_others_files_mindepth="${1#*=}"
             argument_found=1
         ;;
@@ -57,7 +57,7 @@ function _print_help() {
         echo -e "${YELLOW}Options:${NONE}"
         echo -e "${GREEN}--include-others${NONE}             Include non default magento directories"
         echo -e "${GREEN}--include-others-files${NONE}       Include non default magento directories as files"
-        echo -e "${GREEN}--include_others_files_mindepth=MINDEPTH${NONE}       Mindepth for include other files (default: 1)"
+        echo -e "${GREEN}--include-others-files-mindepth=MINDEPTH${NONE}       Mindepth for include other files (default: 1)"
         echo -e "${GREEN}--include-app-code-core${NONE}      Include app/code/core files"
         echo -e "${GREEN}--subdirectory=DIRNAME${NONE}       If files are in a subdirectory of the module"
         echo ""
